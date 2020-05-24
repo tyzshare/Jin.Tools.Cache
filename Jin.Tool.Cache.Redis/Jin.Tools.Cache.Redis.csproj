@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <Description>提供framework，netcore对Redis常规操作支持
+底层依赖的StackExchange.Redis</Description>
+    <PackageProjectUrl>https://github.com/tyzshare/Jin.Tools.Cache</PackageProjectUrl>
+    <Authors>天涯子</Authors>
+    <PackageIcon>天涯子80.jpg</PackageIcon>
+    <PackageIconUrl />
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jin.Tools.Cache\Jin.Tools.Cache.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net45'">
+    <PackageReference Include="Newtonsoft.Json" Version="6.0.4" />
+    <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.513" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\tyzshare\图片\天涯子80.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+</Project>
